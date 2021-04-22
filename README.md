@@ -30,21 +30,21 @@ npm install
 
 ## Setup
 
-Create a new file called ".env" in the root directory of your local repo, and place inside the following contents:
+Obtain an [AlphaVantage API Key](https://www.alphavantage.co/support/#api-key) (i.e. `ALPHAVANTAGE_API_KEY`).
+
+Create a new file called ".env" in the root directory of your local repo, and place inside the following contents, specifying your own values as applicable:
 
 ```sh
 # this is the ".env" file...
 
 USER_NAME="Jon Snow"
-```
 
-FYI: the "message" script will use this environment variable, and other scripts below will ask you to setup additional environment variables.
+ALPHAVANTAGE_API_KEY="______"
+```
 
 ## Usage
 
 Examine the contents of each of the scripts below as you run them in order.
-
-It's ok to just run the basic scripts to get a hang of things. Students seeking further exploration can also run the "Stocks and Cryptos" scripts, and the "Firebase Database" script.
 
 ### Basic Scripts
 
@@ -76,15 +76,7 @@ node app/message.js
 
 These scripts demonstrate asynchronous requests using the `node-fetch` package.
 
-To setup this example, first [obtain an AlphaVantage API Key](https://www.alphavantage.co/support/#api-key) (i.e. `ALPHAVANTAGE_API_KEY`), and add it to the ".env" file.
-
-```sh
-# this is somewhere in the ".env" file:
-
-ALPHAVANTAGE_API_KEY="______"
-```
-
-Then run the "stocks" script to fetch some stock market data, optionally specifying a stock symbol environment variable at runtime:
+Run the "stocks" script to fetch some stock market data, optionally specifying a stock symbol environment variable at runtime:
 
 ```sh
 node app/stocks.js
@@ -94,13 +86,12 @@ STOCK_SYMBOL="TSLA" node app/stocks.js
 # ... etc.
 ```
 
-
-Also run the "cryptos" script to get some cryptocurrency ratings:
+Run the "cryptos" script to get some cryptocurrency ratings:
 
 ```sh
 node app/cryptos.js
 ```
 
-### Firebase Database
 
-TBA
+
+`
