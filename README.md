@@ -92,6 +92,6 @@ Run the "cryptos" script to get some cryptocurrency ratings:
 node app/cryptos.js
 ```
 
+### [Database Setup Guide](DATABASE.md)
 
-
-`
+Students seeking some further exploration can follow the Database Setup Guide to fetch data from a Google Firestore database.
