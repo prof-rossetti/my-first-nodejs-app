@@ -2,11 +2,8 @@
 
 
 const fetch = require("node-fetch") // see: https://www.npmjs.com/package/node-fetch
-const dotenv = require("dotenv") // see: https://github.com/prof-rossetti/internet-technologies/blob/main/notes/javascript/packages/dotenv.md
 
-dotenv.config() // reads environment variables from the ".env" file and stores them in `process.env`
-
-const API_KEY = process.env.ALPHAVANTAGE_API_KEY || "demo"
+const API_KEY = require("../utils/alpha.js") // imports code from a local file
 
 var symbol = process.env.STOCK_SYMBOL || "GOOGL"
 

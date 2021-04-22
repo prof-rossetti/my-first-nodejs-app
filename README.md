@@ -42,25 +42,31 @@ FYI: the "message" script will use this environment variable, and other scripts 
 
 ## Usage
 
-### Index
+Examine the contents of each of the scripts below as you run them in order.
 
-Run a basic local JavaScript file:
+It's ok to just run the basic scripts to get a hang of things. Students seeking further exploration can also run the "Stocks and Cryptos" scripts, and the "Firebase Database" script.
+
+### Basic Scripts
+
+The "index" script shows we can run some basic JavaScript:
 
 ```sh
 node index.js
 ```
 
-### Calculate
-
-The calculate script demonstrates simple data crunching with the `d3` package:
+The "calculate" script demonstrates how to import and use installed third-party packages (like `d3`):
 
 ```sh
 node app/calculate.js
 ```
 
-### Message
+The "my script" file demonstrates how to import and use functionality from another local JavaScript file (in this case, the "my-mod.js" file in the "utils" directory):
 
-The message script demonstrates reading environment variables from the ".env" file with the `dotenv` package:
+```sh
+node app/my-script.js
+```
+
+The "message" script demonstrates how to use the `dotenv` package to read environment variables from the ".env" file:
 
 ```sh
 node app/message.js
@@ -70,7 +76,7 @@ node app/message.js
 
 These scripts demonstrate asynchronous requests using the `node-fetch` package.
 
-To setup this example, first [obtain an AlphaVantage API Key](https://www.alphavantage.co/support/#api-key) (i.e. `ALPHAVANTAGE_API_KEY`), and add it to the ".env" file:
+To setup this example, first [obtain an AlphaVantage API Key](https://www.alphavantage.co/support/#api-key) (i.e. `ALPHAVANTAGE_API_KEY`), and add it to the ".env" file.
 
 ```sh
 # this is somewhere in the ".env" file:
@@ -78,18 +84,23 @@ To setup this example, first [obtain an AlphaVantage API Key](https://www.alphav
 ALPHAVANTAGE_API_KEY="______"
 ```
 
-Then run the script to fetch some stock market data (specifying specific stocks as environment variables either via the ".env" file or at runtime):
+Then run the "stocks" script to fetch some stock market data, optionally specifying a stock symbol environment variable at runtime:
 
 ```sh
 node app/stocks.js
+# alternatively...
 STOCK_SYMBOL="MSFT" node app/stocks.js
 STOCK_SYMBOL="TSLA" node app/stocks.js
 # ... etc.
 ```
 
 
-And maybe also some cryptocurrency ratings:
+Also run the "cryptos" script to get some cryptocurrency ratings:
 
 ```sh
 node app/cryptos.js
 ```
+
+### Firebase Database
+
+TBA
