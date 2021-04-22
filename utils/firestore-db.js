@@ -21,11 +21,11 @@ const db = firebase.firestore(app)
 async function fetchProducts() {
     console.log("FETCHING PRODUCTS...")
 
-    // https://googleapis.dev/nodejs/firestore/latest/CollectionReference.html#get
+    // see: https://googleapis.dev/nodejs/firestore/latest/CollectionReference.html#get
     const docs = await db.collection("products").get()
     console.log("DOCS:", docs.size)
 
-    // https://googleapis.dev/nodejs/firestore/latest/QuerySnapshot.html
+    // see: https://googleapis.dev/nodejs/firestore/latest/QuerySnapshot.html
     // instead of returning the products as documents with separate ids and data
     // let's create a single object with both the id and the data
     // to make them easier to process and loop through later
@@ -40,4 +40,52 @@ async function fetchProducts() {
     return products
 }
 
-module.exports = {firebaseConfig, app, db, fetchProducts}
+async function createOrder(newOrder) {
+    //
+    // FYI: newOrder param should look like:
+    //
+    // {
+    //   "userEmail": "hello@example.com",
+    //   "productID": "klmnopq",
+    //   "quantity": 2,
+    //   "totalPrice": 6.99
+    // }
+    //
+    newOrder["timestamp"] = Date.now().toFixed()
+    console.log("NEW ORDER:", newOrder)
+
+    // see: https://googleapis.dev/nodejs/firestore/latest/CollectionReference.html
+    var ordersRef = db.collection("orders2")
+
+    // see: https://firebase.google.com/docs/database/admin/save-data
+    await ordersRef.add(newOrder)
+
+    return newOrder
+}
+
+async function fetchUserOrders(userEmail) {
+    console.log("FETCHING ORDERS FOR USER:", userEmail)
+
+    // see: https://firebase.google.com/docs/firestore/query-data/queries
+    const docs = await db.collection("orders").where('userEmail', '==', userEmail).get()
+    console.log("DOCS:", docs.size)
+
+    // see: https://googleapis.dev/nodejs/firestore/latest/QuerySnapshot.html
+    // instead of returning the documents with separate ids and data,
+    // ... let's create a single object with both the id and the data
+    // ... to make them easier to process and loop through later
+    var orders = []
+    docs.forEach((doc) => {
+        //console.log("DOC ID:", doc.id, "DATA", doc.data())
+        var order = doc.data()
+        order["id"] = doc.id
+        orders.push(order)
+    })
+    console.log("ORDERS:", orders.length)
+    return orders
+}
+
+module.exports = {
+    firebaseConfig, app, db,
+    fetchProducts, createOrder, fetchUserOrders
+}
