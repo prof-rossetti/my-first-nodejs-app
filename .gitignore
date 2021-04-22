@@ -1,0 +1,10 @@
+
+
+# ignore locally-installed packages:
+node_modules/
+
+# ignore secret credentials:
+.env
+
+# ignore clutter files (Mac OS):
+.DS_Store

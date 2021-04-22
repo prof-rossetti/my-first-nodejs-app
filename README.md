@@ -7,9 +7,7 @@
 
 ## Setup
 
-Fork this repository, then click the green button to reveal  your forked repo's SSH address (e.g. `git@github.com:YOUR_USERNAME/my-first-node-app.git`).
-
-Use the SSH address to clone, or download, your forked repo onto your local machine:
+Fork this repository, then click the green button to reveal  your forked repo's SSH address (e.g. `git@github.com:YOUR_USERNAME/my-first-node-app.git`). Use the SSH address to clone, or download, your forked repo onto your local machine, perhaps onto the Desktop:
 
 ```sh
 cd ~/Desktop
@@ -30,10 +28,19 @@ Install package dependencies:
 npm install
 ```
 
+> NOTE: see the "dependencies" section of the "package.json" file.
+
+
 ## Usage
 
 Run the local JavaScript file:
 
 ```sh
 node index.js
+```
+
+This script requires one of the local packages we installed earlier (i.e. `d3`):
+
+```sh
+node app/calculate.js
 ```
