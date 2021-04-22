@@ -44,10 +44,10 @@ Also create a new collection called "orders", with the following attributes:
 
 ### Environment Variables
 
-Create a new file called ".env" in the root directory, and place inside the following contents, using your own values:
+You should already have a".env" file in the root directory. Place the following contents inside, specifying your own credentials you obtained from the Firebase console (see "Firebase Setup" step above):
 
 ```sh
-# this is an example ".env" file...
+# this the ".env" file...
 
 #
 # FIREBASE
@@ -65,7 +65,7 @@ REACT_APP_FIREBASE_DATABASE_URL="https://my-project-123.firebaseio.com"
 
 ### Usage
 
-Finally, after setting up the database and configuring environment variable,s you should be able to run the "products" script to fetch the products from the database:
+Finally, after setting up the database and configuring environment variables, you should be able to run the "products" script to fetch the products from the database:
 
 ```sh
 node app/products.js
