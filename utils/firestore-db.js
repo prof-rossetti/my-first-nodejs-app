@@ -55,7 +55,7 @@ async function createOrder(newOrder) {
     console.log("NEW ORDER:", newOrder)
 
     // see: https://googleapis.dev/nodejs/firestore/latest/CollectionReference.html
-    var ordersRef = db.collection("orders2")
+    var ordersRef = db.collection("orders")
 
     // see: https://firebase.google.com/docs/database/admin/save-data
     await ordersRef.add(newOrder)
