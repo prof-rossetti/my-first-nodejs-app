@@ -14,6 +14,7 @@ const firebaseConfig = {
     messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
     appId: process.env.FIREBASE_APP_ID
 }
+
 const app = firebase.initializeApp(firebaseConfig)
 
 const db = firebase.firestore(app)
@@ -51,7 +52,7 @@ async function createOrder(newOrder) {
     //   "totalPrice": 6.99
     // }
     //
-    newOrder["timestamp"] = Date.now().toFixed()
+    newOrder["timestamp"] = parseInt(Date.now().toFixed())
     console.log("NEW ORDER:", newOrder)
 
     // see: https://googleapis.dev/nodejs/firestore/latest/CollectionReference.html
