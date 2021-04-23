@@ -44,7 +44,7 @@ Also create a new collection called "orders", with the following attributes:
 
 ### Environment Variables
 
-You should already have a".env" file in the root directory. Place the following contents inside, specifying your own credentials you obtained from the Firebase console (see "Firebase Setup" step above):
+You should already have a ".env" file in the root directory. Place the following contents inside, specifying your own credentials you obtained from the Firebase console (see "Firebase Setup" step above):
 
 ```sh
 # this the ".env" file...
