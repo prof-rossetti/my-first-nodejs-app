@@ -12,13 +12,13 @@ Visit https://console.firebase.google.com/ to **create a new Firebase project**.
   1. Choose an existing Google Analytics account or create a new one.
   2. Enable the setting to automatically create a new property in this account.
 
-Click the gear icon to visit the "Project Settings" page, locate the "Your Apps" section, and **create a Web App**, or use an existing one. When you create the app, , you'll see its **Firebase SDK credentials**. Use these values for the `FIREBASE_` environment variables (see "Environment Variables" section below).
+Click the gear icon to visit the "Project Settings" page, locate the "Your Apps" section, and **create a Web App**, or use an existing one. When you create the app,  you'll see its **Firebase SDK credentials**. Use these values for the `FIREBASE_` environment variables (see "Environment Variables" section below).
 
 > FYI: you can find the credentials anytime by visiting the app's settings page, finding the "Firebase SDK snippet", and clicking "Config".
 
 ### Firestore Database Setup
 
-Follow [this guide](https://firebase.google.com/docs/firestore/quickstart) to create a Firestore database for the Firebase project you just created. When you create the database, "start in test mode".
+Follow [this guide](https://firebase.google.com/docs/firestore/quickstart#create) (just the "Create a Cloud Firestore database" section), to create a Firestore database for the Firebase project you just created. When you create the database, "start in test mode".
 
 #### Products Collection
 
