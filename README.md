@@ -30,7 +30,7 @@ npm install
 
 ## Setup
 
-Obtain an [AlphaVantage API Key](https://www.alphavantage.co/support/#api-key) (i.e. `ALPHAVANTAGE_API_KEY`).
+Obtain a premium [AlphaVantage API Key](https://www.alphavantage.co/support/#api-key) from the professor (i.e. `ALPHAVANTAGE_API_KEY`).
 
 Create a new file called ".env" in the root directory of your local repo, and place inside the following contents, specifying your own values as applicable:
 
