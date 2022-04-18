@@ -1,4 +1,8 @@
 
+//
+// ENVIRONMENT VARIABLE APPROACH
+//
+
 //const dotenv = require("dotenv") // see: https://github.com/prof-rossetti/internet-technologies/blob/main/notes/javascript/packages/dotenv.md
 //const firebase = require("firebase/app")
 //require("firebase/firestore")
@@ -17,20 +21,21 @@
 //const app = firebase.initializeApp(firebaseConfig)
 //const db = firebase.firestore(app)
 
-
-
+//
+// CREDENTIALS FILE APPROACH
 // see: https://firebase.google.com/docs/firestore/quickstart#node.js
+//
 
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
 
 const serviceAccountCreds = require('../google-credentials.json'); // assumes you downloaded the credentials file here
 
-initializeApp({
-  credential: cert(serviceAccountCreds)
-});
+initializeApp({credential: cert(serviceAccountCreds)});
 
 const db = getFirestore();
+
+
 
 
 async function fetchProducts() {
