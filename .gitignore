@@ -8,3 +8,8 @@ node_modules/
 
 # ignore clutter files (Mac OS):
 .DS_Store
+
+# ignore local google credentials file:
+
+google-credentials.json
+*credentials*.json

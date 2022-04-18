@@ -5,16 +5,20 @@ Let's setup our own database and fetch data from there. We'll use a NoSQL key-va
 
 ## Setup
 
-### Firebase Setup
+### Google Cloud Project
 
-Visit https://console.firebase.google.com/ to **create a new Firebase project**. When you create the project:
+Visit the [Google Cloud Console](https://console.cloud.google.com). Create a new project, and name it. After it is created, select it from the project selection dropdown menu.
 
-  1. Choose an existing Google Analytics account or create a new one.
-  2. Enable the setting to automatically create a new property in this account.
+### Firebase Project
 
-Click the gear icon to visit the "Project Settings" page, locate the "Your Apps" section, and **create a Web App**, or use an existing one. When you create the app,  you'll see its **Firebase SDK credentials**. Use these values for the `FIREBASE_` environment variables (see "Environment Variables" section below).
+Visit the [Google Firebase Console](https://console.firebase.google.com/) to create a new Firebase project. When you create the project:
 
-> FYI: you can find the credentials anytime by visiting the app's settings page, finding the "Firebase SDK snippet", and clicking "Config".
+  1. Select the Google Cloud project you just created from the dropdown.
+  2. Enable Google Analytics.
+  3. Configure Google Analytics:
+     1. Choose an existing Google Analytics account or create a new one.
+     2. Automatically create a new property in this account.
+
 
 ### Firestore Database Setup
 
@@ -30,38 +34,25 @@ Strawberries | Juicy organic strawberries. | 4.99 | https://picsum.photos/id/108
 Cup of Tea | An individually-prepared tea or coffee of choice. | 3.49 | https://picsum.photos/id/225/360/200
 Textbook | It has all the answers. | 129.99 | https://picsum.photos/id/24/360/200
 
-#### Orders Collection
-
-Also create a new collection called "orders", with the following attributes:
-
-  + `id` (auto-generated)
-  + `userEmail` (string)
-  + `productId` (string)
-  + `quantity` (number)
-  + `totalPrice` (number)
-  + `timestamp` (number)
 
 
-### Environment Variables
 
-You should already have a ".env" file in the root directory. Place the following contents inside, specifying your own credentials you obtained from the Firebase console (see "Firebase Setup" step above):
 
-```sh
-# this the ".env" file...
 
-#
-# FIREBASE
-#
+### Google Cloud Service Account Credentials
 
-REACT_APP_FIREBASE_API_KEY="_______"
-REACT_APP_FIREBASE_AUTH_DOMAIN="my-project-123.firebaseapp.com"
-REACT_APP_FIREBASE_PROJECT_ID="my-project-123"
-REACT_APP_FIREBASE_STORAGE_BUCKET="my-project-123.appspot.com"
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID="_______"
-REACT_APP_FIREBASE_APP_ID="_______"
-#REACT_APP_FIREBASE_MEASUREMENT_ID="G-XXXXXXXXXX"
-REACT_APP_FIREBASE_DATABASE_URL="https://my-project-123.firebaseio.com"
-```
+To fetch data from the Firestore database (and use other Google APIs), the app will need access to a local "service account" credentials file.
+
+From the [Google API Credentials](https://console.cloud.google.com/apis/credentials) page, find the service account created during the Firebase project setup process (it should be called something like "firebase-adminsdk"), or feel free to create a new service account.
+
+For the chosen service account, create new JSON credentials file as necessary from the "Keys" menu, then download the resulting JSON file into the root directory of this repo, specifically named "google-credentials.json".
+
+
+
+
+
+
+
 
 ### Usage
 
@@ -72,12 +63,3 @@ node app/products.js
 ```
 
 > NOTE: this might take a while to finish after it returns the products.
-
-
-Also run the "orders" script to demonstrate your ability to store data back in the database:
-
-```sh
-node app/orders.js
-```
-
-> NOTE: this might take a while to finish after it creates the order.
