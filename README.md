@@ -7,17 +7,12 @@
 
 ## Installation
 
-Fork [this repository](https://github.com/prof-rossetti/my-first-nodejs-app/) on GitHub, then from your forked repo's homepage, click the green button to reveal its SSH address (e.g. `git@github.com:YOUR_USERNAME/my-first-node-app.git`). Use the SSH address to clone, or download, your forked repo onto your local machine, perhaps onto the Desktop:
-
-```sh
-cd ~/Desktop
-git clone git@github.com:YOUR_USERNAME/my-first-nodejs-app.git
-```
+Make a copy of this [template repository](https://github.com/prof-rossetti/my-first-nodejs-app/). Download or "clone" your copy of the repo onto your local computer, for example, onto the Desktop.
 
 Before running any of the commands below, navigate into this directory from the command-line:
 
 ```sh
-cd my-first-nodejs-app
+cd ~/Desktop/my-first-nodejs-app
 ```
 
 Install package dependencies:
