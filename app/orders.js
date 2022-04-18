@@ -1,13 +1,13 @@
 
 
-const {fetchProducts, createOrder, fetchUserOrders} = require("../utils/firestore-db")
-
-createOrder({
-    "userEmail": "me@example.net",
-    "productID": "example-product-id-123",
-    "quantity": 2,
-    "totalPrice": 6.50
-})
+//const {fetchProducts, createOrder, fetchUserOrders} = require("../utils/firestore-db")
+//
+//createOrder({
+//    "userEmail": "me@example.net",
+//    "productID": "example-product-id-123",
+//    "quantity": 2,
+//    "totalPrice": 6.50
+//})
 
 // var myEmail = "me@example.net"
 //
